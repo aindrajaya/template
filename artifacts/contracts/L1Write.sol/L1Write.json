@@ -1,0 +1,345 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "L1Write",
+  "sourceName": "contracts/L1Write.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "_wei",
+          "type": "uint64"
+        }
+      ],
+      "name": "CDeposit",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "_wei",
+          "type": "uint64"
+        }
+      ],
+      "name": "CWithdrawal",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "asset",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "isBuy",
+          "type": "bool"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "limitPx",
+          "type": "uint64"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "sz",
+          "type": "uint64"
+        }
+      ],
+      "name": "IocOrder",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "destination",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "token",
+          "type": "uint64"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "_wei",
+          "type": "uint64"
+        }
+      ],
+      "name": "SpotSend",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "validator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "_wei",
+          "type": "uint64"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "isUndelegate",
+          "type": "bool"
+        }
+      ],
+      "name": "TokenDelegate",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "ntl",
+          "type": "uint64"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "toPerp",
+          "type": "bool"
+        }
+      ],
+      "name": "UsdClassTransfer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "vault",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "isDeposit",
+          "type": "bool"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "usd",
+          "type": "uint64"
+        }
+      ],
+      "name": "VaultTransfer",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "_wei",
+          "type": "uint64"
+        }
+      ],
+      "name": "sendCDeposit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "_wei",
+          "type": "uint64"
+        }
+      ],
+      "name": "sendCWithdrawal",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "asset",
+          "type": "uint32"
+        },
+        {
+          "internalType": "bool",
+          "name": "isBuy",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint64",
+          "name": "limitPx",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "sz",
+          "type": "uint64"
+        }
+      ],
+      "name": "sendIocOrder",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "destination",
+          "type": "address"
+        },
+        {
+          "internalType": "uint64",
+          "name": "token",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "_wei",
+          "type": "uint64"
+        }
+      ],
+      "name": "sendSpot",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "validator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint64",
+          "name": "_wei",
+          "type": "uint64"
+        },
+        {
+          "internalType": "bool",
+          "name": "isUndelegate",
+          "type": "bool"
+        }
+      ],
+      "name": "sendTokenDelegate",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "ntl",
+          "type": "uint64"
+        },
+        {
+          "internalType": "bool",
+          "name": "toPerp",
+          "type": "bool"
+        }
+      ],
+      "name": "sendUsdClassTransfer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "vault",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "isDeposit",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint64",
+          "name": "usd",
+          "type": "uint64"
+        }
+      ],
+      "name": "sendVaultTransfer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506104e1806100206000396000f3fe608060405234801561001057600080fd5b506004361061006d5760003560e01c80630b0ac0ab14610072578063258f0dcc146100875780632d9d5db61461009a578063414fa437146100ad5780634e4719ab146100c057806384918d1e146100d3578063db30aa53146100e6575b600080fd5b610085610080366004610338565b6100f9565b005b61008561009536600461038b565b61014f565b6100856100a83660046103b7565b61019c565b6100856100bb3660046103ea565b6101e3565b6100856100ce36600461040c565b610227565b6100856100e13660046103ea565b610287565b6100856100f436600461046b565b6102c0565b604080516001600160401b038085168252831660208201526001600160a01b0385169133917f09f4a089fd53b0b2cd536bc6d609a82b696295ebdcb91c7e216ad11c5223f1d991015b60405180910390a3505050565b6040805183151581526001600160401b03831660208201526001600160a01b0385169133917f1a729f4ef39a715194f8084eec644ce6f8f01909dc15e5bb0197bb2b7b8313769101610142565b336001600160a01b03167f7a1295c51ef7a78228f94d80495169fb233db371130a00f6fb718bbef734546783836040516101d79291906104a5565b60405180910390a25050565b336001600160a01b03167fd0f1a003ed3bfa57c76de3702b6697f7121de9e9a083464dccb5c1bcf9cdb0d98260405161021c91906104c0565b60405180910390a250565b6040805163ffffffff8616815284151560208201526001600160401b038481168284015283166060820152905133917f7597e7aa503612e7889c5d1f11e2dee5fcefca0e76ab1d7b460f0f1f98d8ddd1919081900360800190a250505050565b336001600160a01b03167f41031f020c109ae2c55e59831bb87eb1903104fbc39b347fba3d1d344e6a20238260405161021c91906104c0565b826001600160a01b0316336001600160a01b03167f475ec8b67801429f179721112a6d5cd50cc1e2dd3d69d829f81b266e79cd026e84846040516101429291906104a5565b80356001600160a01b038116811461031c57600080fd5b919050565b80356001600160401b038116811461031c57600080fd5b60008060006060848603121561034d57600080fd5b61035684610305565b925061036460208501610321565b915061037260408501610321565b90509250925092565b8035801515811461031c57600080fd5b6000806000606084860312156103a057600080fd5b6103a984610305565b92506103646020850161037b565b600080604083850312156103ca57600080fd5b6103d383610321565b91506103e16020840161037b565b90509250929050565b6000602082840312156103fc57600080fd5b61040582610321565b9392505050565b6000806000806080858703121561042257600080fd5b843563ffffffff8116811461043657600080fd5b93506104446020860161037b565b925061045260408601610321565b915061046060608601610321565b905092959194509250565b60008060006060848603121561048057600080fd5b61048984610305565b925061049760208501610321565b91506103726040850161037b565b6001600160401b039290921682521515602082015260400190565b6001600160401b039190911681526020019056fea164736f6c6343000814000a",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061006d5760003560e01c80630b0ac0ab14610072578063258f0dcc146100875780632d9d5db61461009a578063414fa437146100ad5780634e4719ab146100c057806384918d1e146100d3578063db30aa53146100e6575b600080fd5b610085610080366004610338565b6100f9565b005b61008561009536600461038b565b61014f565b6100856100a83660046103b7565b61019c565b6100856100bb3660046103ea565b6101e3565b6100856100ce36600461040c565b610227565b6100856100e13660046103ea565b610287565b6100856100f436600461046b565b6102c0565b604080516001600160401b038085168252831660208201526001600160a01b0385169133917f09f4a089fd53b0b2cd536bc6d609a82b696295ebdcb91c7e216ad11c5223f1d991015b60405180910390a3505050565b6040805183151581526001600160401b03831660208201526001600160a01b0385169133917f1a729f4ef39a715194f8084eec644ce6f8f01909dc15e5bb0197bb2b7b8313769101610142565b336001600160a01b03167f7a1295c51ef7a78228f94d80495169fb233db371130a00f6fb718bbef734546783836040516101d79291906104a5565b60405180910390a25050565b336001600160a01b03167fd0f1a003ed3bfa57c76de3702b6697f7121de9e9a083464dccb5c1bcf9cdb0d98260405161021c91906104c0565b60405180910390a250565b6040805163ffffffff8616815284151560208201526001600160401b038481168284015283166060820152905133917f7597e7aa503612e7889c5d1f11e2dee5fcefca0e76ab1d7b460f0f1f98d8ddd1919081900360800190a250505050565b336001600160a01b03167f41031f020c109ae2c55e59831bb87eb1903104fbc39b347fba3d1d344e6a20238260405161021c91906104c0565b826001600160a01b0316336001600160a01b03167f475ec8b67801429f179721112a6d5cd50cc1e2dd3d69d829f81b266e79cd026e84846040516101429291906104a5565b80356001600160a01b038116811461031c57600080fd5b919050565b80356001600160401b038116811461031c57600080fd5b60008060006060848603121561034d57600080fd5b61035684610305565b925061036460208501610321565b915061037260408501610321565b90509250925092565b8035801515811461031c57600080fd5b6000806000606084860312156103a057600080fd5b6103a984610305565b92506103646020850161037b565b600080604083850312156103ca57600080fd5b6103d383610321565b91506103e16020840161037b565b90509250929050565b6000602082840312156103fc57600080fd5b61040582610321565b9392505050565b6000806000806080858703121561042257600080fd5b843563ffffffff8116811461043657600080fd5b93506104446020860161037b565b925061045260408601610321565b915061046060608601610321565b905092959194509250565b60008060006060848603121561048057600080fd5b61048984610305565b925061049760208501610321565b91506103726040850161037b565b6001600160401b039290921682521515602082015260400190565b6001600160401b039190911681526020019056fea164736f6c6343000814000a",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
